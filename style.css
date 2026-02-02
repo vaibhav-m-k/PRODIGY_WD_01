@@ -1,54 +1,113 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  color: #222;
 }
 
 /* Navbar */
 #navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: transparent;
-    padding: 15px 0;
-    transition: background-color 0.3s ease;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+#navbar.scrolled {
+  background: #0f172a;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.nav-menu li {
-    margin: 0 20px;
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #38bdf8;
 }
 
-.nav-menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s ease;
+.nav-links {
+  list-style: none;
+  display: flex;
 }
 
-/* Hover effect */
-.nav-menu a:hover {
-    color: #ffd700;
+.nav-links li {
+  margin-left: 30px;
 }
 
-/* Navbar when scrolled */
-.scrolled {
-    background-color: #222;
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* Page content */
+/* Hover underline animation */
+.nav-links a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* Content */
 .content {
-    padding-top: 100px;
-    text-align: center;
+  padding: 100px 50px;
+  text-align: center;
 }
 
-.spacer {
-    height: 2000px;
+.content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.content p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
 }
